@@ -64,6 +64,9 @@ if __name__ == "__main__":
 # chaging the return ... to html (render template)
 # creating new templates directory
 
+
+
+# py -3 -m venv venv    ---> for creating new enviornment
 # venv\Scripts\activate  ---> for activating the enviornment 
 
 
