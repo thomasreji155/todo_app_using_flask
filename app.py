@@ -25,6 +25,7 @@ def index():
 def about():
     return "About"
 
+
 @app.route('/add',methods = ["POST"])
 def add():
     # add new item
@@ -34,6 +35,7 @@ def add():
     db.session.commit()
     return redirect(url_for("index"))
 
+
 @app.route("/update/<int:todo_id>")
 def update(todo_id):
     todo = Todo.query.filter_by(id = todo_id).first()
@@ -41,12 +43,14 @@ def update(todo_id):
     db.session.commit()
     return redirect(url_for("index"))
 
+
 @app.route("/delete/<int:todo_id>")
 def delete(todo_id):
     todo = Todo.query.filter_by(id = todo_id).first()
     db.session.delete(todo) 
     db.session.commit()
     return redirect(url_for("index"))
+
 
 if __name__ == "__main__":
     db.create_all()
@@ -68,8 +72,6 @@ if __name__ == "__main__":
 
 # py -3 -m venv venv    ---> for creating new enviornment
 # venv\Scripts\activate  ---> for activating the enviornment 
-
-
 
 
 
